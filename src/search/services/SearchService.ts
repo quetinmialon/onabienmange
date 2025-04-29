@@ -11,11 +11,13 @@ export class SearchService
         this.setProduct = setProduct
         this.ProductGateway = ProductGateway
     }
-    async searchByBarcode(barcode: string): Promise<void> {
+// SearchService.ts
+    async searchByBarcode(barcode: string): Promise<Product | null> {
         const product = await this.ProductGateway.searchByBarcode(barcode);
-        if (!product) {
-            throw new Error("Product not found for the given barcode.");
+        if (product) {
+            this.setProduct(product);
         }
-        this.setProduct(product);
+        return product;
     }
+  
 } 

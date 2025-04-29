@@ -3,4 +3,5 @@ export type Product = {
     name: string;
     brand: string;
     nutriscore: string;
+    error? : string;
 }

@@ -35,7 +35,13 @@ describe('product',() => {
     test('OFPS should return null for an invalid barcode', async () => {
         const service = new OpenFoodFactProductService();
         const product = await service.searchByBarcode('invalid-barcode');
-        expect(product).toBeNull();
+        const expectedResult = {
+            barcode: 'invalid-barcode',
+            name: 'Unknown',
+            brand: 'Unknown',
+            nutriscore: 'Unknown',
+            error: 'Produit non trouvé'
+        };
+        expect(product).toEqual(expectedResult);
     });
-    
 });

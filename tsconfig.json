@@ -2,5 +2,16 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true
-  }
+  },
+  "plugins": [
+  [
+    "react-native-scanbot-barcode-scanner-sdk",
+    {
+      "iOSCameraUsageDescription": "Barcode Camera permissions",
+      "androidCameraPermission": true,
+      "androidCameraFeature": true,
+      "mavenURLs": true
+    }
+  ]
+],
 }
