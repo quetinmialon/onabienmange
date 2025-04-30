@@ -1,7 +1,7 @@
-export type Product = {
+export interface Product  {
     barcode: string;
     name: string;
-    brand: string;
-    nutriscore: string;
+    brand: string | null;
+    nutriscore: string | null;
     error? : string;
 }

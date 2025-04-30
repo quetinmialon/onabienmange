@@ -1,4 +1,5 @@
 import { Product } from "../entities/Product";
 export default interface ProductGateway {
-     searchByBarcode: (barcode: string) => Promise<Product | null>;
+     getProductByBarcode: (barcode: string) => Promise<Product | null>;
+     saveProduct: (product: Product) => Promise<void>;
 }

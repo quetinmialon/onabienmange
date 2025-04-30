@@ -13,11 +13,11 @@ export class SearchService
     }
 // SearchService.ts
     async searchByBarcode(barcode: string): Promise<Product | null> {
-        const product = await this.ProductGateway.searchByBarcode(barcode);
-        if (product) {
-            this.setProduct(product);
-        }
+        const product = await this.ProductGateway.getProductByBarcode(barcode);
         return product;
     }
-  
+
+    async redirectToProductPage(product: Product): Promise<void> {
+        this.setProduct(product);
+    }
 } 

@@ -1,9 +1,10 @@
 import ProductGateway from "../gateways/ProductGateway";
 import { Product } from "../entities/Product";
-import { ApiRoutes } from "../endpoints/api";
+import { ApiRoutes } from "../../endpoints/api";
 
-export default class OpenFoodFactProductService implements ProductGateway {
-    async searchByBarcode(barcode: string): Promise<Product | null> {
+export default class OpenFoodFactProductRepository implements ProductGateway {
+   
+    async getProductByBarcode(barcode: string): Promise<Product | null> {
     try {
       const response = await fetch(`${ApiRoutes.Barcode}/${barcode}.json`);
       const data = await response.json();
@@ -28,5 +29,8 @@ export default class OpenFoodFactProductService implements ProductGateway {
         console.error("Error fetching product:", error);
       }
       return null;
+    }
+    async saveProduct(product: Product): Promise<void> {
+      return // readonly API atm so no implementation on this repository
     }
 }
