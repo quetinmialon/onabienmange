@@ -1,7 +1,5 @@
 export default interface HistoryEntry {
     barcode: string;
-    searchedAt: number;
-
-    
+    searchedAt: number;  
   }
   

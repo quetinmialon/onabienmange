@@ -28,7 +28,8 @@
     "react-native-scanbot-barcode-scanner-sdk": "^6.2.1",
     "react-native-scanbot-sdk": "^6.2.1",
     "react-native-screens": "~4.4.0",
-    "vitest": "^3.1.2"
+    "vitest": "^3.1.2",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
