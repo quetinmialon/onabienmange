@@ -3,9 +3,6 @@ import * as SQLite from 'expo-sqlite';
 const db = SQLite.openDatabaseSync('app.db');
 
 const createTables = () => {
-    //drop database if exists
-    db.execAsync('DROP TABLE IF EXISTS history;');
-    db.execAsync('DROP TABLE IF EXISTS products;');
     //create tables
     try {
         db.execAsync(
